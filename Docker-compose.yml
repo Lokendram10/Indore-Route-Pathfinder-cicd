@@ -1,6 +1,7 @@
 services:
  mongo:
    image: mongo:latest
+   container_name: mongodb
    ports:
      - "27017:27017"
    volumes:
@@ -12,13 +13,13 @@ services:
      context: ./backend
    ports:
      - "5000:5000"
+   volumes:
+     - ./backend:/usr/src/app
    networks:
      - mern
    depends_on:
      - mongo
 
-   volumes:
-     - ./backend:/usr/src/app
 
  frontend:
    build:
@@ -28,7 +29,11 @@ services:
      - "5173:5173"
    networks:
      - mern
+   depends_on:
+     - backend
 
 networks:
   mern:
     driver: bridge
+volumes:
+  my-mongo-data:

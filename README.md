@@ -16,6 +16,10 @@
 
 ---
 
+> **Note**: This project was originally created by Harshit Singh. I forked the repository and made additional changes (Docker, Docker Compose, and Jenkins pipeline) in the **main** branch. The **master** branch contains the original code.
+
+---
+
 ## ✨ Features
 
 * 📍 **Add Stations**: Create new stations/locations
@@ -43,13 +47,24 @@
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/your-username/indore-route-planner.git
-cd indore-route-planner
+git clone https://github.com/Lokendram10/Indore-Route-Pathfinder-cicd
+cd Indore-Route-Pathfinder-cicd
 ```
 
-### 2. Docker Setup
+### 2. Install Docker & Docker Compose (Linux)
 
-Make sure Docker and Docker Compose are installed.
+```bash
+sudo apt-get update
+sudo apt-get install docker.io -y
+sudo apt-get install docker-compose -y
+
+# Give permission to current user to run docker without sudo
+sudo usermod -aG docker $USER && newgrp docker
+```
+
+> ⚠️ Logout and login again for group changes to take effect.
+
+### 3. Docker Setup
 
 ```bash
 # Build and run containers
@@ -59,7 +74,7 @@ docker-compose up --build
 * Backend API: `http://localhost:5000`
 * Frontend App: `http://localhost:3000`
 
-### 3. Environment Variables
+### 4. Environment Variables
 
 Create a `.env` file inside the `backend` folder:
 

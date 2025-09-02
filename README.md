@@ -62,7 +62,7 @@ sudo apt-get install docker-compose -y
 sudo usermod -aG docker $USER && newgrp docker
 ```
 
-> ⚠️ Logout and login again for group changes to take effect.
+>⚠️ Logout and login again for group changes to take effect if newgrp docker does not work.
 
 ### 3. Docker Setup
 

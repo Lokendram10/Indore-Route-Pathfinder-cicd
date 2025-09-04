@@ -68,7 +68,7 @@ sudo usermod -aG docker $USER && newgrp docker
 
 ```bash
 # Build and run containers
-docker-compose up --build
+docker-compose up -d  --build
 ```
 
 * Backend API: `http://localhost:5000`
@@ -168,3 +168,4 @@ Uses **Dijkstra's Algorithm** to find:
 ## 📄 License
 
 MIT License - feel free to use this project!
+

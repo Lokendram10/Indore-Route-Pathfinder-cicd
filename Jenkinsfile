@@ -14,9 +14,12 @@ pipeline {
         stage('SonarQube Scan') {
             steps {
                 withSonarQubeEnv('SonarQubeServer') {
-                    sh '${SONARQUBE_SCANNER_HOME}/bin/sonar-scanner'  -DsonarProjectName=Indore-Route-Pathfinder-cicd 
+                    sh ''' ${SONARQUBE_SCANNER_HOME}/bin/sonar-scanner \
+                    -Dsonar.projectName=Indore-Route-Pathfinder-cicd \
                      -Dsonar.projectKey=Indore-Route-Pathfinder-cicd
+                     '''
                 }
+                
             }
         }
         stage('OWASP Dependency Check') {

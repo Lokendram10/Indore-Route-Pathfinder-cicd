@@ -30,6 +30,7 @@ pipeline {
                     , odcInstallation: 'owasp'
                  )
                     echo "OWASP Dependency Check"
+                 dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
             }
         }
         stage('Trivy Scan') {
